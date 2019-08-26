@@ -1,0 +1,28 @@
+int RledPin=3;
+int YledPin=4;
+int GledPin=5;
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(RledPin,OUTPUT);
+  pinMode(YledPin,OUTPUT);
+  pinMode(GledPin,OUTPUT);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(RledPin,HIGH);
+  digitalWrite(YledPin,LOW);
+  digitalWrite(GledPin,LOW);
+  delay(1000);
+
+  digitalWrite(RledPin,LOW);
+  digitalWrite(YledPin,HIGH);
+  digitalWrite(GledPin,LOW);
+  delay(1000);
+
+  digitalWrite(RledPin,LOW);
+  digitalWrite(YledPin,LOW);
+  digitalWrite(GledPin,HIGH);
+  delay(1000);
+}
