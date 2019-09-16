@@ -1,0 +1,32 @@
+#include<Servo.h>
+Servo myServo;
+int Pos=0;
+int SensorPin=A0;
+int SensorValue=0;
+void setup() {
+  // put your setup code here, to run once:
+  myServo.attach(9);
+  Serial.begin(9000);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  SensorValue=analogRead(SensorPin);
+  Serial.println("Soil Moisture");
+  Serial.println(SensorValue);
+  if(SensorValue > 500)
+  {
+    for(Pos=0;Pos<=180;Pos+=1)
+    {
+      myServo.write(Pos);
+      delay(15);
+    }
+    for(Pos=180;Pos>=0;Pos-=1)
+    {
+      myServo.write(Pos);
+      delay(15);
+    }
+  }
+  delay(1000);
+
+}
